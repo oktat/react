@@ -1,0 +1,1 @@
+# Objektumok frissítése

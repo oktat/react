@@ -190,6 +190,12 @@ li {
 }
 ```
 
-## Élő minta
+## Minta
+
+### Élő minta
 
 * [https://szit.hu/m/react_todo/](https://szit.hu/m/react_todo/)
+
+### GitHub tárolón
+
+* [https://github.com/oktat/react_todo.git](https://github.com/oktat/react_todo.git)

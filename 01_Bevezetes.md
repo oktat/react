@@ -1,5 +1,12 @@
 # A React
 
+* **Szerző:** Sallai András
+* Copyright (c) 2024, Sallai András
+* Licenc: [CC Attribution-Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+* Web: [https://szit.hu](https://szit.hu)
+
+## A React-ról
+
 A React egy JavaScript programozói könyvtár, ahol a weboldalt komponensekből építjük fel. A komponensek a React beépített komponensei vagy saját komponensek.
 
 ## A JSX

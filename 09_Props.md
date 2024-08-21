@@ -1,5 +1,10 @@
 # A props
 
+* **Szerző:** Sallai András
+* Copyright (c) 2024, Sallai András
+* Licenc: [CC Attribution-Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+* Web: [https://szit.hu](https://szit.hu)
+
 ## A props-ról
 
 A props egy csak olvasható tulajdonság, amivel adatokat tudunk megosztani a komponensek számára. A szülő komponens adatokat küldhet a gyermekkomponensnek.

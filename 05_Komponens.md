@@ -18,6 +18,8 @@ export default App
 
 Az App.css fájl törölhető.
 
+## A Header komponens
+
 Hozzuk létre a Header komponenst. Hozzunk létre egy Header.jsx fájlt, a következő tartalommal:
 
 ```jsx
@@ -64,6 +66,8 @@ function Header() {
 }
 export default Header
 ```
+
+## A Footer komponens
 
 Az src könyvtárban készítsük el a következő Footer komponenst.
 
@@ -126,7 +130,9 @@ function Footer() {
 export default Footer
 ```
 
-Készítsük el a Emp komponensünket.
+## Az Emp komponens
+
+Készítsük el az Emp komponensünket.
 
 ```jsx
 function Emp() {

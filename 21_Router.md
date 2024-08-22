@@ -13,169 +13,11 @@
 pnpm install react-router-dom
 ```
 
-## Lapok
-
-Készítsünk egy pages nevű könyvtárat az src könyvtáron belül.
-
-* src/pages/Home.jsx
-* src/pages/Solution.jsx
-* src/pages/About.jsx
-
-## Útválasztás beállítása
-
-```javascript
-import { Route } from "react-router-dom"
-import { Routes } from "react-router-dom"
-import { BrowserRouter } from "react-router-dom"
-import Home from "./pages/Home"
-import Solutions from "./pages/Solutions"
-import About from "./pages/About"
-import { Link } from "react-router-dom"
-
-function App() {
-
-  return (
-
-    <BrowserRouter>
-      <nav>
-          <ul>
-              <li>
-                  <Link to='/'>Home</Link>
-              </li>
-              <li>
-                  <Link to='/solution'>Solutions</Link>
-              </li>
-              <li>
-                  <Link to='/about'>About</Link>
-              </li>
-          </ul>
-      </nav>
-      <Routes>        
-        <Route path='/' element={<Home />} />
-        <Route path='/solution' element={<Solutions />} />
-        <Route path='/about' element={<About />} />
-      </Routes>
-    </BrowserRouter>
-
-  )
-}
-
-export default App
-```
-
-## Másik megoldás
-
-src/App.js:
-
-```javascript
-import { 
-  createBrowserRouter, 
-  createRoutesFromElements, 
-  Route 
-} from 'react-router-dom'
-import About from './pages/About'
-import Home from './pages/Home'
-import Layout from './pages/Layout'
-import { RouterProvider } from 'react-router-dom'
-import Solution from './pages/Solution'
-
-function App() {
-
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="solution" element={<Solution />} />
-      </Route>
-    )
-  )
-
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
-}
-
-export default App
-```
-
-src/pages/Layout.jsx:
-
-```javascript
-import { Outlet } from "react-router-dom"
-import { Link } from "react-router-dom"
-
-function Layout() {
-  return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Főoldal</Link>
-          </li>
-          <li>
-            <Link to="/solution">Megoldás</Link>
-          </li>
-          <li>
-            <Link to="/about">Névjegy</Link>
-          </li>
-        </ul>
-      </nav>
-      <Outlet />
-    </>
-  )
-}
-
-export default Layout
-```
-
-### Kreállók lapjai
-
-src/pages/Home.jsx:
-
-```javascript
-
-function Home() {
-  return (
-    <div>Home</div>
-  )
-}
-
-export default Home
-```
-
-src/pages/Solution.jsx:
-
-```javascript
-function Solution() {
-  return (
-    <div>Solution</div>
-  )
-}
-
-export default Solution
-```
-
-src/pages/About.jsx:
-
-```javascript
-
-function About() {
-  return (
-    <div>About</div>
-  )
-}
-
-export default About
-```
-
-## Legújabb React Router
+## Útválasztás megvalósítása
 
 src/App.jsx:
 
-```javascript
+```jsx
 import { createBrowserRouter } from 'react-router-dom'
 import About from './pages/About'
 import Home from './pages/Home'
@@ -216,8 +58,105 @@ function App() {
 export default App
 ```
 
-A weblapok megegyeznek az előző fejezetben megadotakkal.
+## Lapok
 
-Lásd:
+src/pages/Home.jsx:
+
+```jsx
+
+function Home() {
+  return (
+    <div>Home</div>
+  )
+}
+
+export default Home
+```
+
+src/pages/Solution.jsx:
+
+```jsx
+function Solution() {
+  return (
+    <div>Solution</div>
+  )
+}
+
+export default Solution
+```
+
+src/pages/About.jsx:
+
+```jsx
+
+function About() {
+  return (
+    <div>About</div>
+  )
+}
+
+export default About
+```
+
+## Hibaoldal
+
+```jsx
+{
+  path: '*',
+  element: <Nopage />,
+},
+```
+
+Teljeskód:
+
+src/App.jsx:
+
+```jsx
+import { createBrowserRouter } from 'react-router-dom'
+import About from './pages/About'
+import Home from './pages/Home'
+import Layout from './pages/Layout'
+import { RouterProvider } from 'react-router-dom'
+import Solution from './pages/Solution'
+import Nopage from './pages/Nopage'
+
+function App() {
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: 'about',
+          element: <About />,
+        },
+        {
+          path: 'solution',
+          element: <Solution />,
+        },
+        {
+          path: '*',
+          element: <Nopage />,
+        },
+      ],
+    },
+  ])
+
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  )
+}
+
+export default App
+```
+
+## Lásd
 
 * [https://reactrouter.com/en/main/routers/create-browser-router](https://reactrouter.com/en/main/routers/create-browser-router) (2024)

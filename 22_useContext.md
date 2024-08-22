@@ -62,6 +62,8 @@ function CompA() {
 export default CompA
 ```
 
+A name létrehozása során szögletes zárójelbe kell tenni. Nélküle is működik, de ha a konzolt megnézzük figyelmeztetést kapunk: "Warning: Functions are not valid as a React child."
+
 src/components/CompB.jsx:
 
 ```javascript

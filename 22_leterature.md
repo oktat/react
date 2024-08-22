@@ -1,4 +1,4 @@
-# Irodalom
+# Irodalom, források, ötletek forrása
 
 ## Forrás
 

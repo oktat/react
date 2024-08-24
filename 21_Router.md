@@ -5,6 +5,16 @@
 * Licenc: [CC Attribution-Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 * Web: [https://szit.hu](https://szit.hu)
 
+## Tartalomjegyzék
+
+* [Tartalomjegyzék](#tartalomjegyzék)
+* [Szükséges csomagok](#szükséges-csomagok)
+* [Útválasztás megvalósítása](#útválasztás-megvalósítása)
+* [Lapok](#lapok)
+* [A Layout komponens](#a-layout-komponens)
+* [Hibaoldal](#hibaoldal)
+* [Lásd](#lásd)
+
 ## Szükséges csomagok
 
 * react-router-dom

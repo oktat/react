@@ -98,6 +98,40 @@ function About() {
 export default About
 ```
 
+## A Layout komponens
+
+src/components/Layout.jsx:
+
+```javascript
+import { Outlet } from 'react-router-dom'
+
+function Layout() {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Főoldal</a>
+          </li>
+          <li>
+            <a href="/about">Névjegy</a>
+          </li>
+          <li>
+            <a href="/solution">Megoldás</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <Outlet />
+      </main>
+    </>
+  )
+}
+
+export default Layout
+```
+
 ## Hibaoldal
 
 ```jsx
